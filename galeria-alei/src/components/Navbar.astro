@@ -1,0 +1,54 @@
+---
+// Navbar.astro
+---
+
+<nav class="fixed top-0 w-full z-50 bg-white transition-colors duration-500">
+    <div class="flex justify-between items-center w-full px-8 py-6 max-w-screen-2xl mx-auto">
+        <div class="text-2xl font-normal font-['Newsreader'] tracking-[0.2em] text-[#2d3435]">Alei</div>
+        <div class="hidden md:flex space-x-12 font-['Newsreader'] tracking-widest uppercase text-sm">
+            <a class="nav-link active text-[#2d3435] border-b border-[#2d3435] pb-1 transition-all" href="#works">Series</a>
+            <a class="nav-link text-[#5f5e5e] hover:text-[#2d3435] transition-all hover:opacity-70" href="#collab">Colaboraciones</a>
+            <a class="nav-link text-[#5f5e5e] hover:text-[#2d3435] transition-all hover:opacity-70" href="#catalog">Catálogo</a>
+            <a class="nav-link text-[#5f5e5e] hover:text-[#2d3435] transition-all hover:opacity-70" href="#contact">Contacto</a>
+        </div>
+        <div class="md:hidden">
+            <span class="material-symbols-outlined text-on-surface">menu</span>
+        </div>
+    </div>
+</nav>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        // ScrollSpy for Navbar Links
+        const sections = document.querySelectorAll("section[id], footer[id]");
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        const observerOptions = {
+            root: null,
+            rootMargin: "-20% 0px -60% 0px",
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute("id");
+                    
+                    navLinks.forEach(link => {
+                        link.classList.remove("active", "text-[#2d3435]", "border-b", "border-[#2d3435]", "pb-1");
+                        link.classList.add("text-[#5f5e5e]", "hover:text-[#2d3435]", "hover:opacity-70");
+                        
+                        if (link.getAttribute("href") === `#${id}`) {
+                            link.classList.remove("text-[#5f5e5e]", "hover:text-[#2d3435]", "hover:opacity-70");
+                            link.classList.add("active", "text-[#2d3435]", "border-b", "border-[#2d3435]", "pb-1");
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(sec => {
+            observer.observe(sec);
+        });
+    });
+</script>

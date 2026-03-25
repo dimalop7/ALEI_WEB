@@ -1,0 +1,58 @@
+---
+// Catalogo.astro
+---
+
+<section class="py-32" id="catalog">
+    <div class="flex flex-col md:flex-row justify-start items-end mb-20 gap-4 w-full">
+        <div class="w-full text-left">
+            <h2 class="font-headline text-5xl font-light text-on-surface">Catálogo</h2>
+        </div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20">
+        <!-- Item 1 -->
+        <div class="flex flex-col gap-6 group">
+            <div class="aspect-square bg-surface-container-low overflow-hidden relative">
+                <img alt="Work 1"
+                    class="w-full h-full object-cover"
+                    src="/img-catalog/f1.png" />
+            </div>
+            <div class="flex flex-col gap-1">
+                <h4 class="font-headline text-xl text-on-surface">Cuadro 1</h4>
+                <p class="font-body text-[11px] text-secondary uppercase tracking-wider">120 x 100 cm — Óleo sobre lienzo</p>
+                <p class="font-label text-sm text-on-surface mt-2 font-medium">950 €</p>
+            </div>
+        </div>
+        <!-- Item 2 -->
+        <div class="flex flex-col gap-6 group">
+            <div class="aspect-square bg-surface-container-low overflow-hidden relative">
+                <img alt="Work 2"
+                    class="w-full h-full object-cover"
+                    src="/img-catalog/f2.png" />
+            </div>
+            <div class="flex flex-col gap-1">
+                <h4 class="font-headline text-xl text-on-surface">Cuadro 2</h4>
+                <p class="font-body text-[11px] text-secondary uppercase tracking-wider">50 x 70 cm — Serigrafía</p>
+                <p class="font-label text-sm text-on-surface mt-2 font-medium">220 €</p>
+            </div>
+        </div>
+        <!-- Item 3 -->
+        <div class="flex flex-col gap-6 group">
+            <div class="aspect-square bg-surface-container-low overflow-hidden relative">
+                <img alt="Work 3"
+                    class="w-full h-full object-cover"
+                    src="/img-catalog/f3.png" />
+            </div>
+            <div class="flex flex-col gap-1">
+                <h4 class="font-headline text-xl text-on-surface">Cuadro 3</h4>
+                <p class="font-body text-[11px] text-secondary uppercase tracking-wider">80 x 80 cm — Mixta</p>
+                <p class="font-label text-sm text-on-surface mt-2 font-medium">580 €</p>
+            </div>
+        </div>
+    </div>
+    <div class="flex justify-center">
+        <button
+            class="font-label text-sm uppercase tracking-[0.3em] border-b-2 border-on-surface pb-3 hover:opacity-60 transition-opacity">
+            Ver Catálogo Completo
+        </button>
+    </div>
+</section>

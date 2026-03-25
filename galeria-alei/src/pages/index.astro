@@ -1,13 +1,20 @@
 ---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import Series from '../components/Series.astro';
+import Colaboraciones from '../components/Colaboraciones.astro';
+import Catalogo from '../components/Catalogo.astro';
+import Footer from '../components/Footer.astro';
 ---
 
-<html lang="es">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Alei Art</title>
-</head>
-<body>
-    <h1>Nuevo Proyecto (Vacío)</h1>
-</body>
-</html>
+<Layout>
+    <Navbar />
+    <div class="page-container">
+        <Hero />
+        <Series />
+        <Colaboraciones />
+        <Catalogo />
+    </div>
+    <Footer />
+</Layout>

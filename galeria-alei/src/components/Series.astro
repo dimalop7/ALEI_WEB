@@ -1,0 +1,161 @@
+---
+// Series.astro
+---
+
+<section class="py-32" id="works">
+    <div class="flex flex-col md:flex-row justify-start items-end mb-20 gap-4 w-full">
+        <div class="w-full text-left">
+            <h2 class="font-headline text-5xl font-light text-on-surface">Series de Alei</h2>
+        </div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 items-center">
+        <!-- Esqueletos Carousel -->
+        <div class="group relative carousel-container mx-auto w-full max-w-sm">
+            <div class="relative overflow-hidden bg-surface-container-lowest mb-6 aspect-[3/4]">
+                <div class="carousel-track h-full scroll-smooth">
+                    <div class="carousel-item">
+                        <img alt="Esqueletos 1" class="w-full h-full object-cover transition-all duration-700"
+                            src="/img-ser-car-1/esqueletos1.jpeg" />
+                    </div>
+                    <div class="carousel-item">
+                        <img alt="Esqueletos 2" class="w-full h-full object-cover transition-all duration-700"
+                            src="/img-ser-car-1/esqueletos2.jpeg" />
+                    </div>
+                    <div class="carousel-item">
+                        <img alt="Esqueletos 3" class="w-full h-full object-cover transition-all duration-700"
+                            src="/img-ser-car-1/esqueletos3.jpeg" />
+                    </div>
+                </div>
+                <!-- Controls -->
+                <button
+                    class="absolute z-10 top-1/2 left-2 -translate-y-1/2 bg-white/50 hover:bg-white rounded-full p-2 text-black transition-colors opacity-0 group-hover:opacity-100 carousel-prev"
+                    aria-label="Anterior">
+                    <span class="material-symbols-outlined text-sm">arrow_back</span>
+                </button>
+                <button
+                    class="absolute z-10 top-1/2 right-2 -translate-y-1/2 bg-white/50 hover:bg-white rounded-full p-2 text-black transition-colors opacity-0 group-hover:opacity-100 carousel-next"
+                    aria-label="Siguiente">
+                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                </button>
+            </div>
+            <div class="flex justify-between items-center pt-4">
+                <h3 class="font-headline text-2xl font-normal text-on-surface">Esqueletos</h3>
+            </div>
+        </div>
+
+        <!-- Flores Carousel -->
+        <div class="group relative carousel-container mx-auto w-full max-w-sm">
+            <div class="relative overflow-hidden bg-surface-container-lowest mb-6 aspect-[3/4]">
+                <div class="carousel-track h-full scroll-smooth">
+                    <div class="carousel-item">
+                        <img alt="Flores 1" class="w-full h-full object-cover transition-all duration-700"
+                            src="/img-ser-car-2/f1.png" />
+                    </div>
+                    <div class="carousel-item">
+                        <img alt="Flores 2" class="w-full h-full object-cover transition-all duration-700"
+                            src="/img-ser-car-2/f2.jpeg" />
+                    </div>
+                </div>
+                <!-- Controls -->
+                <button
+                    class="absolute z-10 top-1/2 left-2 -translate-y-1/2 bg-white/50 hover:bg-white rounded-full p-2 text-black transition-colors opacity-0 group-hover:opacity-100 carousel-prev"
+                    aria-label="Anterior">
+                    <span class="material-symbols-outlined text-sm">arrow_back</span>
+                </button>
+                <button
+                    class="absolute z-10 top-1/2 right-2 -translate-y-1/2 bg-white/50 hover:bg-white rounded-full p-2 text-black transition-colors opacity-0 group-hover:opacity-100 carousel-next"
+                    aria-label="Siguiente">
+                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                </button>
+            </div>
+            <div class="flex justify-between items-center pt-4">
+                <h3 class="font-headline text-2xl font-normal text-on-surface">Jarrones</h3>
+            </div>
+        </div>
+
+        <!-- Paisajes Carousel -->
+        <div class="group relative carousel-container mx-auto w-full max-w-sm">
+            <div class="relative overflow-hidden bg-surface-container-lowest mb-6 aspect-[3/4]">
+                <div class="carousel-track h-full scroll-smooth">
+                    <div class="carousel-item">
+                        <img alt="Paisaje 1" class="w-full h-full object-cover transition-all duration-700"
+                            src="/img-ser-car-3/f1.png" />
+                    </div>
+                    <div class="carousel-item">
+                        <img alt="Paisaje 2" class="w-full h-full object-cover transition-all duration-700"
+                            src="/img-ser-car-3/f2.png" />
+                    </div>
+                        <div class="carousel-item">
+                        <img alt="Paisaje 3" class="w-full h-full object-cover transition-all duration-700"
+                            src="/img-ser-car-3/f3.png" />
+                    </div>
+                </div>
+                <!-- Controls -->
+                <button
+                    class="absolute z-10 top-1/2 left-2 -translate-y-1/2 bg-white/50 hover:bg-white rounded-full p-2 text-black transition-colors opacity-0 group-hover:opacity-100 carousel-prev"
+                    aria-label="Anterior">
+                    <span class="material-symbols-outlined text-sm">arrow_back</span>
+                </button>
+                <button
+                    class="absolute z-10 top-1/2 right-2 -translate-y-1/2 bg-white/50 hover:bg-white rounded-full p-2 text-black transition-colors opacity-0 group-hover:opacity-100 carousel-next"
+                    aria-label="Siguiente">
+                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                </button>
+            </div>
+            <div class="flex justify-between items-center pt-4">
+                <h3 class="font-headline text-2xl font-normal text-on-surface">Paisajes</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll('.carousel-container').forEach((container: any) => {
+            const track = container.querySelector('.carousel-track');
+            const items = container.querySelectorAll('.carousel-item');
+            const prevBtn = container.querySelector('.carousel-prev');
+            const nextBtn = container.querySelector('.carousel-next');
+
+            if (!track || !items.length) return;
+
+            let currentIndex = 0;
+            let isAnimating = false;
+
+            const updateCarousel = () => {
+                const offset = currentIndex * 100;
+                track.style.transform = `translateX(-${offset}%)`;
+
+                // Update button visibility
+                if (prevBtn) {
+                    prevBtn.style.display = currentIndex === 0 ? 'none' : 'block';
+                }
+                if (nextBtn) {
+                    nextBtn.style.display = currentIndex === items.length - 1 ? 'none' : 'block';
+                }
+            };
+
+            if (nextBtn) {
+                nextBtn.addEventListener('click', () => {
+                    if (isAnimating || currentIndex === items.length - 1) return;
+                    isAnimating = true;
+                    currentIndex++;
+                    updateCarousel();
+                    setTimeout(() => { isAnimating = false; }, 450);
+                });
+            }
+
+            if (prevBtn) {
+                prevBtn.addEventListener('click', () => {
+                    if (isAnimating || currentIndex === 0) return;
+                    isAnimating = true;
+                    currentIndex--;
+                    updateCarousel();
+                    setTimeout(() => { isAnimating = false; }, 450);
+                });
+            }
+
+            updateCarousel();
+        });
+    });
+</script>

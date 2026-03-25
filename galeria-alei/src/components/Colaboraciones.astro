@@ -1,0 +1,174 @@
+---
+// Colaboraciones.astro
+---
+
+<!-- Recent Works & Collaborations (Reformatted) -->
+<section class="py-32" id="collab">
+    <div class="flex flex-col md:flex-row justify-start items-end mb-20 gap-4 w-full">
+        <div class="w-full text-left">
+            <h2 class="font-headline text-5xl font-light text-on-surface">Colaboraciones</h2>
+        </div>
+    </div>
+    <div class="grid md:grid-cols-12 gap-12 items-center">
+        <!-- Carousel Area (Left) -->
+        <div class="md:col-span-7 bg-surface-container-low shadow-xl group relative carousel-container">
+            <div class="relative overflow-hidden aspect-[4/5]">
+                <div class="carousel-track h-full scroll-smooth">
+                    <div class="carousel-item">
+                        <img alt="Drag Item 1" class="w-full h-full object-cover transition-all duration-700" src="/img-col-car-1/f1.png" />
+                    </div>
+                    <div class="carousel-item">
+                        <img alt="Drag Item 2" class="w-full h-full object-cover transition-all duration-700" src="/img-col-car-1/f2.png" />
+                    </div>
+                    <div class="carousel-item">
+                        <img alt="Drag Item 3" class="w-full h-full object-cover transition-all duration-700" src="/img-col-car-1/f3.png" />
+                    </div>
+                    <div class="carousel-item">
+                        <img alt="Drag Item 4" class="w-full h-full object-cover transition-all duration-700" src="/img-col-car-1/f4.png" />
+                    </div>
+                </div>
+                <!-- Controls -->
+                <button
+                    class="absolute z-10 top-1/2 left-4 -translate-y-1/2 bg-white/50 hover:bg-white rounded-full p-3 text-black transition-colors opacity-0 group-hover:opacity-100 carousel-prev"
+                    aria-label="Anterior">
+                    <span class="material-symbols-outlined">arrow_back</span>
+                </button>
+                <button
+                    class="absolute z-10 top-1/2 right-4 -translate-y-1/2 bg-white/50 hover:bg-white rounded-full p-3 text-black transition-colors opacity-0 group-hover:opacity-100 carousel-next"
+                    aria-label="Siguiente">
+                    <span class="material-symbols-outlined">arrow_forward</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Text Area (Right) -->
+        <div class="md:col-span-5 flex flex-col items-start gap-8 pr-8">
+            <div class="flex flex-col gap-2">
+                <h3 class="font-headline text-5xl leading-tight font-light text-on-surface italic">Alei X Springfield</h3>
+            </div>
+            <p class="font-body text-lg text-secondary leading-relaxed">
+                Una colaboración que fusiona la estética de Springfield con la visión artística de Alei, creando una serie de obras que exploran la cultura pop a través de un lente artístico contemporáneo.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Collab 2: Carousel Left, Text Right -->
+<section class="py-32">
+    <div class="grid md:grid-cols-12 gap-12 items-center">
+        <!-- Carousel Area (Left) -->
+        <div class="md:col-span-7 bg-surface-container-low shadow-xl group relative carousel-container">
+            <div class="relative overflow-hidden aspect-[4/5]">
+                <div class="carousel-track h-full scroll-smooth">
+                    <div class="carousel-item">
+                        <img alt="Obra 1" class="w-full h-full object-cover transition-all duration-700" src="/img-col-car-2/f1.png" />
+                    </div>
+                    <div class="carousel-item">
+                        <img alt="Obra 2" class="w-full h-full object-cover transition-all duration-700" src="/img-col-car-2/f2.png" />
+                    </div>
+                    <div class="carousel-item">
+                        <img alt="Obra 3" class="w-full h-full object-cover transition-all duration-700" src="/img-col-car-2/f3.png" />
+                    </div>
+                </div>
+                <!-- Controls -->
+                <button class="absolute z-10 top-1/2 left-4 -translate-y-1/2 bg-white/50 hover:bg-white rounded-full p-3 text-black transition-colors opacity-0 group-hover:opacity-100 carousel-prev" aria-label="Anterior">
+                    <span class="material-symbols-outlined">arrow_back</span>
+                </button>
+                <button class="absolute z-10 top-1/2 right-4 -translate-y-1/2 bg-white/50 hover:bg-white rounded-full p-3 text-black transition-colors opacity-0 group-hover:opacity-100 carousel-next" aria-label="Siguiente">
+                    <span class="material-symbols-outlined">arrow_forward</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Text Area (Right) -->
+        <div class="md:col-span-5 flex flex-col items-start gap-8 md:pl-8">
+            <div class="flex flex-col gap-2">
+                <h3 class="font-headline text-5xl leading-tight font-light text-on-surface italic">Estrella Galicia</h3>
+            </div>
+            <p class="font-body text-lg text-secondary leading-relaxed">
+                Una colaboración que fusiona la estética de Estrella Galicia con la visión artística de Alei, creando una serie de obras que exploran la cultura pop a través de un lente artístico contemporáneo.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Collab 3: Inverted (Text Left, Carousel Right) -->
+<section class="py-32">
+    <div class="grid md:grid-cols-12 gap-12 items-center">
+        <!-- Text Area (Left) -->
+        <div class="md:col-span-5 flex flex-col items-start gap-8 md:pr-8 order-2 md:order-1">
+            <div class="flex flex-col gap-2">
+                <h3 class="font-headline text-5xl leading-tight font-light text-on-surface italic">Día de Galicia</h3>
+            </div>
+            <p class="font-body text-lg text-secondary leading-relaxed">
+                Colaboración que explora la identidad gallega a través de la lente artística de Alei, creando una serie de obras que dialogan con la cultura pop y la memoria colectiva.
+            </p>
+        </div>
+
+        <!-- Carousel Area (Right) -->
+        <div class="md:col-span-7 bg-surface-container-low shadow-xl group relative carousel-container order-1 md:order-2">
+            <div class="relative overflow-hidden aspect-[4/5]">
+                <div class="carousel-track h-full scroll-smooth">
+                    <div class="carousel-item">
+                        <img alt="Item 1" class="w-full h-full object-cover transition-all duration-700" src="/img-col-car-3/f1.png" />
+                    </div>
+                    <div class="carousel-item">
+                        <img alt="Item 2" class="w-full h-full object-cover transition-all duration-700" src="/img-col-car-3/f2.png" />
+                    </div>
+                    <div class="carousel-item">
+                        <img alt="Item 3" class="w-full h-full object-cover transition-all duration-700" src="/img-col-car-3/f3.png" />
+                    </div>
+                </div>
+                <!-- Controls -->
+                <button class="absolute z-10 top-1/2 left-4 -translate-y-1/2 bg-white/50 hover:bg-white rounded-full p-3 text-black transition-colors opacity-0 group-hover:opacity-100 carousel-prev" aria-label="Anterior">
+                    <span class="material-symbols-outlined">arrow_back</span>
+                </button>
+                <button class="absolute z-10 top-1/2 right-4 -translate-y-1/2 bg-white/50 hover:bg-white rounded-full p-3 text-black transition-colors opacity-0 group-hover:opacity-100 carousel-next" aria-label="Siguiente">
+                    <span class="material-symbols-outlined">arrow_forward</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Collab 4: Inverted (Text Left, Carousel Right) -->
+<section class="py-32">
+    <div class="grid md:grid-cols-12 gap-12 items-center">
+        <!-- Text Area (Left) -->
+        <div class="md:col-span-5 flex flex-col items-start gap-8 md:pr-8 order-2 md:order-1">
+            <div class="flex flex-col gap-2">
+                <h3 class="font-headline text-5xl leading-tight font-light text-on-surface italic">Alei X ZaraKids</h3>
+            </div>
+            <p class="font-body text-lg text-secondary leading-relaxed">
+                Colección que fusiona la estética de ZaraKids con la visión artística de Alei, creando una serie de obras que exploran la cultura pop a través de un lente artístico contemporáneo.
+            </p>
+        </div>
+
+        <!-- Carousel Area (Right) -->
+        <div class="md:col-span-7 bg-surface-container-low shadow-xl group relative carousel-container order-1 md:order-2">
+            <div class="relative overflow-hidden aspect-[4/5]">
+                <div class="carousel-track h-full scroll-smooth">
+                    <div class="carousel-item">
+                        <img alt="Item 1" class="w-full h-full object-cover transition-all duration-700" src="/img-col-car-4/f1.png" />
+                    </div>
+                    <div class="carousel-item">
+                        <img alt="Item 2" class="w-full h-full object-cover transition-all duration-700" src="/img-col-car-4/f2.png" />
+                    </div>
+                    <div class="carousel-item">
+                        <img alt="Item 3" class="w-full h-full object-cover transition-all duration-700" src="/img-col-car-4/f3.png" />
+                    </div>
+                    <div class="carousel-item">
+                        <img alt="Item 4" class="w-full h-full object-cover transition-all duration-700" src="/img-col-car-4/f4.png" />
+                    </div>
+                </div>
+                <!-- Controls -->
+                <button class="absolute z-10 top-1/2 left-4 -translate-y-1/2 bg-white/50 hover:bg-white rounded-full p-3 text-black transition-colors opacity-0 group-hover:opacity-100 carousel-prev" aria-label="Anterior">
+                    <span class="material-symbols-outlined">arrow_back</span>
+                </button>
+                <button class="absolute z-10 top-1/2 right-4 -translate-y-1/2 bg-white/50 hover:bg-white rounded-full p-3 text-black transition-colors opacity-0 group-hover:opacity-100 carousel-next" aria-label="Siguiente">
+                    <span class="material-symbols-outlined">arrow_forward</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
