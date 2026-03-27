@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      screens: {
+        '3xl': '1700px', // Extra breakpoint for very large monitors
+      },
       colors: {
         "error-dim": "#4e0309",
         "error": "#9f403d",
