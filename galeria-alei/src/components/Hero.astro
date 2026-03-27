@@ -2,28 +2,40 @@
 // Hero.astro
 ---
 
-<header class="min-h-screen pt-32 md:pt-48 pb-16 md:pb-24 flex flex-col justify-start md:justify-center relative">
-    <div class="grid lg:grid-cols-12 gap-12 items-center z-10 w-full">
+<header class="h-screen overflow-hidden flex flex-col justify-center relative px-8 lg:px-16">
+    <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center z-10 w-full max-w-7xl mx-auto">
         <div class="lg:col-span-6 flex flex-col items-start pr-8">
             <h1
-                class="font-headline text-[clamp(4rem,18vw,14rem)] leading-[0.8] font-light tracking-tighter mb-12 text-on-surface">
+                class="font-headline text-[clamp(4rem,15vw,12rem)] leading-[0.8] font-light tracking-tighter mb-8 text-on-surface">
                 Alei
             </h1>
-            <p class="font-body text-xl md:text-2xl font-light tracking-wide text-secondary max-w-xl mb-16">
+            <p class="font-body text-xl md:text-2xl font-light tracking-wide text-secondary max-w-xl mb-12">
                 Arquitecto, Artista y Modelo. <br />
             </p>
-            <div class="flex items-center gap-12">
-                <a class="font-label text-sm uppercase tracking-[0.2em] border-b border-on-surface/30 pb-2 hover:border-on-surface transition-all duration-500 group flex items-center gap-4"
-                    href="https://instagram.com/aleidraws">
+            <div class="flex flex-wrap items-center gap-8">
+                <a class="font-label text-sm uppercase tracking-[0.2em] border-b border-on-surface/30 pb-2 hover:border-on-surface transition-all duration-500"
+                    href="/series">
+                    Series
+                </a>
+                <a class="font-label text-sm uppercase tracking-[0.2em] border-b border-on-surface/30 pb-2 hover:border-on-surface transition-all duration-500"
+                    href="/colaboraciones">
+                    Colaboraciones
+                </a>
+                <a class="font-label text-sm uppercase tracking-[0.2em] border-b border-on-surface/30 pb-2 hover:border-on-surface transition-all duration-500"
+                    href="/catalogo">
+                    Catálogo
+                </a>
+                <a class="font-label text-sm uppercase tracking-[0.2em] border-b border-on-surface/30 pb-2 hover:border-on-surface transition-all duration-500 group flex items-center gap-2"
+                    href="https://instagram.com/aleidraws" target="_blank">
                     Instagram
                     <span
                         class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_outward</span>
                 </a>
             </div>
         </div>
-        <div class="lg:col-span-6 flex justify-end w-full">
+        <div class="lg:col-span-6 flex justify-end w-full mt-8 lg:mt-0">
             <div
-                class="w-full max-w-md aspect-[3/4] overflow-hidden bg-surface-container-low grayscale hover:grayscale-0 transition-all duration-700 shadow-2xl">
+                class="w-full max-w-sm lg:max-w-md aspect-[3/4] overflow-hidden bg-surface-container-low grayscale hover:grayscale-0 transition-all duration-700 shadow-2xl">
                 <img src="/img-hero/f1.png" alt="Hero Portrait" class="w-full h-full object-cover"
                     onerror="this.src='https://placehold.co/600x800/e5e2e1/5f5e5e?text=Placeholder'" />
             </div>

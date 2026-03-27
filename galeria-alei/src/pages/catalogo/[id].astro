@@ -1,0 +1,152 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+// Se ejecuta durante el build para crear tantas páginas previas como cuadros haya
+export function getStaticPaths() {
+  return [
+    {
+      params: { id: 'cuadro-1' },
+      props: { 
+        title: 'Cuadro 1', 
+        images: ['/img-catalog/f1.png', '/img-catalog/f1.png'], 
+        details: '120 x 100 cm — Óleo sobre lienzo', 
+        price: '950 €',
+        description: 'Una pieza abstracta que explora la relación entre la luz y el vacío mediante pinceladas de óleo densas y estructuradas.'
+      },
+    },
+    {
+      params: { id: 'cuadro-2' },
+      props: { 
+        title: 'Cuadro 2', 
+        images: ['/img-catalog/f2.png', '/img-catalog/f2.png'], 
+        details: '50 x 70 cm — Serigrafía', 
+        price: '220 €',
+        description: 'Serigrafía en edición limitada donde las formas geométricas invaden el espacio con una armonía monocromática.'
+      },
+    },
+    {
+      params: { id: 'cuadro-3' },
+      props: { 
+        title: 'Cuadro 3', 
+        images: ['/img-catalog/f3.png', '/img-catalog/f3.png'], 
+        details: '80 x 80 cm — Mixta', 
+        price: '580 €',
+        description: 'Técnica mixta sobre tabla. Una colaboración expresiva con diferentes capas de texturas.'
+      },
+    },
+  ];
+}
+
+const { title, images, details, price, description } = Astro.props;
+---
+
+<Layout>
+    <Navbar />
+    
+    <div class="page-container min-h-screen pt-8 pb-16 flex items-center justify-center max-w-screen-xl mx-auto px-4 md:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 items-center w-full">
+            
+            <!-- Contenedor del Carrusel -->
+            <div class="relative w-full max-w-md mx-auto group" x-data="{ currentIndex: 0 }">
+                <!-- Marco e Imágenes -->
+                <div class="w-full bg-white p-2 relative overflow-hidden">
+                    <div class="relative w-full aspect-[3/4]">
+                        {images.map((img, index) => (
+                            <img 
+                                src={img} 
+                                alt={`${title} - Vista ${index + 1}`} 
+                                class={`absolute inset-0 w-full h-full object-contain transition-opacity duration-500 ease-in-out`}
+                                style={`opacity: ${index === 0 ? '1' : '0'}; z-index: ${index === 0 ? '10' : '0'};`}
+                                data-index={index}
+                            />
+                        ))}
+                    </div>
+                </div>
+
+                <!-- Botones de Navegación -->
+                {images.length > 1 && (
+                    <div class="absolute inset-y-0 left-0 right-0 flex items-center justify-between px-2 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
+                        <button class="carousel-prev pointer-events-auto bg-white/80 p-2 hover:bg-white shadow-lg backdrop-blur-sm transition-colors" aria-label="Anterior">
+                            <span class="material-symbols-outlined text-on-surface">chevron_left</span>
+                        </button>
+                        <button class="carousel-next pointer-events-auto bg-white/80 p-2 hover:bg-white shadow-lg backdrop-blur-sm transition-colors" aria-label="Siguiente">
+                            <span class="material-symbols-outlined text-on-surface">chevron_right</span>
+                        </button>
+                    </div>
+                )}
+            </div>
+
+            <!-- Contenedor de Textos y Detalles -->
+            <div class="flex flex-col gap-6 lg:gap-8">
+                <a href="/catalogo" class="font-label text-[10px] sm:text-xs uppercase tracking-[0.2em] text-secondary hover:text-on-surface transition-colors flex items-center gap-2 mb-4 w-fit border-b border-transparent hover:border-on-surface pb-1">
+                    <span class="material-symbols-outlined text-sm">arrow_back</span>
+                    Volver al Catálogo
+                </a>
+                
+                <div>
+                    <h1 class="font-headline text-5xl md:text-6xl text-on-surface mb-2 font-light">{title}</h1>
+                    <p class="font-body text-sm md:text-sm text-secondary uppercase tracking-[0.1em]">{details}</p>
+                </div>
+
+                <p class="font-body text-base text-on-surface/80 font-light leading-relaxed max-w-md">
+                    {description}
+                </p>
+
+                <div class="mt-4">
+                    <p class="font-label text-2xl text-on-surface">{price}</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <Footer />
+</Layout>
+
+<script>
+    // Lógica del Carrusel
+    document.addEventListener('DOMContentLoaded', () => {
+        const carouselContainers = document.querySelectorAll('.group'); // Selección base del carrusel
+
+        carouselContainers.forEach(container => {
+            const images = container.querySelectorAll('img[data-index]');
+            const prevBtn = container.querySelector('.carousel-prev');
+            const nextBtn = container.querySelector('.carousel-next');
+            
+            if (!images.length || !prevBtn || !nextBtn) return;
+
+            let currentIndex = 0;
+            const totalImages = images.length;
+
+            const updateCarousel = (newIndex) => {
+                // Actualizar imágenes
+                images.forEach((img, i) => {
+                    const imgEl = img as HTMLElement;
+                    if (i === newIndex) {
+                        imgEl.style.opacity = '1';
+                        imgEl.style.zIndex = '10';
+                    } else {
+                        imgEl.style.opacity = '0';
+                        imgEl.style.zIndex = '0';
+                    }
+                });
+
+                currentIndex = newIndex;
+            };
+
+            prevBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const newIndex = currentIndex === 0 ? totalImages - 1 : currentIndex - 1;
+                updateCarousel(newIndex);
+            });
+
+            nextBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const newIndex = currentIndex === totalImages - 1 ? 0 : currentIndex + 1;
+                updateCarousel(newIndex);
+            });
+        });
+    });
+</script>

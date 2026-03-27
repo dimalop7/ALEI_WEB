@@ -1,58 +1,28 @@
 ---
 // Catalogo.astro
+const cuadros = [
+    { id: 'cuadro-1', image: '/img-catalog/f1.png', title: 'Cuadro 1' },
+    { id: 'cuadro-2', image: '/img-catalog/f2.png', title: 'Cuadro 2' },
+    { id: 'cuadro-3', image: '/img-catalog/f3.png', title: 'Cuadro 3' },
+];
 ---
 
-<section class="pt-32 pb-10" id="catalog">
-    <div class="flex flex-col md:flex-row justify-start items-end mb-10 gap-4 w-full">
-        <div class="w-full text-left">
-            <h2 class="font-headline text-5xl font-light text-on-surface">Catálogo</h2>
-        </div>
+<section class="pt-8 pb-10" id="catalog">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-10">
+        {cuadros.map((cuadro) => (
+            <a href={`/catalogo/${cuadro.id}`} class="group cursor-pointer block">
+                <div class="aspect-square bg-surface-container-low overflow-hidden relative">
+                    <img alt={cuadro.title}
+                         class="w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-80"
+                         src={cuadro.image} />
+                </div>
+            </a>
+        ))}
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-        <!-- Item 1 -->
-        <div class="flex flex-col gap-6 group">
-            <div class="aspect-square bg-surface-container-low overflow-hidden relative">
-                <img alt="Work 1"
-                    class="w-full h-full object-cover"
-                    src="/img-catalog/f1.png" />
-            </div>
-            <div class="flex flex-col gap-1">
-                <h4 class="font-headline text-xl text-on-surface">Cuadro 1</h4>
-                <p class="font-body text-[11px] text-secondary uppercase tracking-wider">120 x 100 cm — Óleo sobre lienzo</p>
-                <p class="font-label text-sm text-on-surface mt-2 font-medium">950 €</p>
-            </div>
-        </div>
-        <!-- Item 2 -->
-        <div class="flex flex-col gap-6 group">
-            <div class="aspect-square bg-surface-container-low overflow-hidden relative">
-                <img alt="Work 2"
-                    class="w-full h-full object-cover"
-                    src="/img-catalog/f2.png" />
-            </div>
-            <div class="flex flex-col gap-1">
-                <h4 class="font-headline text-xl text-on-surface">Cuadro 2</h4>
-                <p class="font-body text-[11px] text-secondary uppercase tracking-wider">50 x 70 cm — Serigrafía</p>
-                <p class="font-label text-sm text-on-surface mt-2 font-medium">220 €</p>
-            </div>
-        </div>
-        <!-- Item 3 -->
-        <div class="flex flex-col gap-6 group">
-            <div class="aspect-square bg-surface-container-low overflow-hidden relative">
-                <img alt="Work 3"
-                    class="w-full h-full object-cover"
-                    src="/img-catalog/f3.png" />
-            </div>
-            <div class="flex flex-col gap-1">
-                <h4 class="font-headline text-xl text-on-surface">Cuadro 3</h4>
-                <p class="font-body text-[11px] text-secondary uppercase tracking-wider">80 x 80 cm — Mixta</p>
-                <p class="font-label text-sm text-on-surface mt-2 font-medium">580 €</p>
-            </div>
-        </div>
-    </div>
-    <div class="flex justify-center">
-        <button
-            class="font-label text-sm uppercase tracking-[0.3em] border-b-2 border-on-surface pb-3 hover:opacity-60 transition-opacity">
+    <div class="flex justify-center mt-12">
+        <a href="/catalogo"
+            class="font-label text-xs uppercase tracking-[0.3em] border-b border-on-surface/50 pb-2 hover:border-on-surface hover:text-on-surface/80 transition-all">
             Ver Catálogo Completo
-        </button>
+        </a>
     </div>
 </section>
